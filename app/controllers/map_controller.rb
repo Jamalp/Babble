@@ -17,5 +17,4 @@ class MapController < ApplicationController
     format.json {render json: @tweets}
     end
   end
-
 end
