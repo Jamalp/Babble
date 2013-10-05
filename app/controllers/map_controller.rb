@@ -7,4 +7,12 @@ class MapController < ApplicationController
     @lang = Tweet.first(params[:lang])
   end
 
+  def tweets
+    @tweets = Tweet.all
+    respond_to do |format|
+    format.html
+    format.json {render json: @tweets}
+    end
+  end
+
 end
