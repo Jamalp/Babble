@@ -10,14 +10,15 @@ namespace :tweetstream do
 
 
   desc "Tweets in English"
-    task :english_stream => :environment do
-      TweetStream::Client.new.locations(-74.264885, 40.490043, -73.757111, 40.884448) do |tweet|
+    task :tweets => :environment do
+     TweetStream::Client.new.locations(-74.264885, 40.490043, -73.757111, 40.884448) do |tweet|
         lat = tweet.attrs[:coordinates][:coordinates][1]
         lng = tweet.attrs[:coordinates][:coordinates][0]
         lang = tweet[:lang]
         tweet = Tweet.create(lat: lat, lng: lng, lang: lang)
       end
     end
+
 
   # desc "Tweets in other languages"
   #   task :foreign_stream => :environment do
