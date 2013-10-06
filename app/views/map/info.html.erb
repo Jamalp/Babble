@@ -1,0 +1,22 @@
+<% @tweets.each do |tweet| %>
+{</br>
+  svgPath: tweetSVG,</br>
+  latitude: <%= tweet.lat %>,</br>
+  longitude: <%= tweet.lng %>,</br>
+  <% if tweet.lang == "en" %>
+    color: '#0084B4',
+  <% elsif tweet.lang == "es" %>
+    color: '#FFFA19',
+  <% elsif tweet.lang == "fr" %>
+    color: '#FF010D',
+  <% elsif tweet.lang == "und" %>
+    color: '#000000',
+  <% else %>
+    color: '#FFFFFF',
+  <% end %></br>
+  fixedSize: true,</br>
+  alpha: 1.0,</br>
+  height: 0.75,</br>
+  width: 0.75,</br>
+  centered: true},</br>
+<% end %>

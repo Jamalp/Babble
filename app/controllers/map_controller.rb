@@ -13,4 +13,8 @@ class MapController < ApplicationController
     format.json {render json: @tweets}
     end
   end
+
+  def info
+    @tweets = Tweet.all
+  end
 end
